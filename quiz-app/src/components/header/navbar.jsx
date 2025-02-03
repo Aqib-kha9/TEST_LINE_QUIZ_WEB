@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { 
   AppBar, 
   Toolbar, 
-  Typography, 
   Button, 
   Box, 
   IconButton, 
@@ -14,11 +13,12 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useNavigate } from 'react-router-dom';
+import logo from "../../assets/logo.png";
 
 const navLinks = [
   { label: 'Home', path: '/' },
-  { label: 'About', path: '/about' },
-  { label: 'Contact', path: '/contact' },
+  { label: 'Leader Board', path: '/leader-board' },
+  { label: 'Performance', path: '/quiz-summary' },
 ];
 
 const Navbar = () => {
@@ -31,17 +31,6 @@ const Navbar = () => {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', width: 240 }}>
-      <Typography
-        variant="h6"
-        sx={{ 
-          my: 2, 
-          fontWeight: "bold",
-          color: '#333', // Dark text color for better contrast
-          fontSize: '1.5rem',
-        }}
-      >
-        Quiz App
-      </Typography>
       <List>
         {navLinks.map((item) => (
           <ListItem key={item.label} disablePadding>
@@ -74,19 +63,19 @@ const Navbar = () => {
         sx={{ 
             background: "linear-gradient(to right, #cddff5, #ebf2fc) !important",
             color: 'black', // Dark text color for readability
-          boxShadow: '0px 6px 15px rgba(0, 0, 0, 0.1)', // Soft shadow for subtle effect
-          borderBottom: '2px solid rgba(0, 0, 0, 0.1)',
-          height: '70px',
-          justifyContent: 'center',
-          transition: "all 0.3s ease-in-out",
-          margin: 0, // Remove margins
-          padding: 0, // Remove padding
-          width: '100vw', // Full width
-          top: 0, // Ensure it sticks to the top
-          left: 0, // Ensure it sticks to the left
-        }}
+            boxShadow: '0px 6px 15px rgba(0, 0, 0, 0.1)', // Soft shadow for subtle effect
+            borderBottom: '2px solid rgba(0, 0, 0, 0.1)',
+            height: '70px',
+            justifyContent: 'center',
+            transition: "all 0.3s ease-in-out",
+            margin: 0, // Remove margins
+            padding: 0, // Remove padding
+            width: '100vw', // Full width
+            top: 0, // Ensure it sticks to the top
+            left: 0, // Ensure it sticks to the left
+          }}
       >
-        <Toolbar sx={{ height: '64px', px: 2 }}>
+        <Toolbar sx={{ height: '64px', px: 2, display: 'flex', justifyContent: 'space-between' }}>
           {/* Animated Menu Icon for Mobile */}
           <IconButton
             color="inherit"
@@ -107,19 +96,22 @@ const Navbar = () => {
             <MenuIcon />
           </IconButton>
 
-          {/* Brand Title with Dark Text Color */}
-          <Typography 
-            variant="h6" 
-            component="div" 
+          {/* Brand Logo Image */}
+          <Box 
             sx={{ 
-              flexGrow: 1, 
-              fontWeight: "bold",
-              color: '#333', // Dark text color for better visibility on white background
-              textShadow: "0px 0px 5px rgba(0, 0, 0, 0.1)" // Subtle text shadow
+              display: 'flex', 
+              justifyContent: 'flex-start', // Align logo to the left
+              alignItems: 'center',
+              cursor: 'pointer' // Make the logo clickable
             }}
+            onClick={() => navigate('/')} // Redirect to Home on click
           >
-            Quiz App
-          </Typography>
+            <img 
+              src={logo} // Replace with your logo path
+              alt="Quiz App Logo" 
+              style={{ width: '80px', height: '50px' }} // Adjust image size as needed
+            />
+          </Box>
 
           {/* Navigation Buttons with Subtle Hover Effect */}
           <Box sx={{ display: { xs: 'none', sm: 'flex' }, gap: 3 }}>

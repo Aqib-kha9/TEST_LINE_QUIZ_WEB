@@ -144,7 +144,7 @@ const Index = () => {
                 boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.3)", // Enhanced shadow
               },
             }}
-            onClick={() => navigate("/metaData")}
+            onClick={() => navigate("/rules")}
           >
             Start Quiz
           </Button>
