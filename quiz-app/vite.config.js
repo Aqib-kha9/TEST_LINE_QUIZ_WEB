@@ -4,13 +4,13 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   server: {
-    // proxy: {
-    //   "/api": {
-    //     target: "https://api.jsonserve.com",
-    //     changeOrigin: true,
-    //     rewrite: (path) => path.replace(/^\/api/, ""),
-    //   },
-    // },
+    proxy: {
+      "/api": {
+        target: "https://api.jsonserve.com", // Your API URL
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
+    },
     hmr: {
       overlay: false, // Disable HMR overlay
     },
