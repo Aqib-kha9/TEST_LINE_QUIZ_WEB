@@ -101,7 +101,7 @@ npm run dev
 ## 📞 Contact
 
 For any queries, feel free to reach out:  
-📧 your.email@example.com  
+📧 aquibkhan8140@gmail.com  
 🔗 [LinkedIn](https://www.linkedin.com/in/aqib-kha9)
 
 🚀 Good luck! We can't wait to see your creative solution! 🎯
