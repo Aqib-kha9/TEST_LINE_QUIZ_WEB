@@ -8,7 +8,7 @@ const AppState = (props) => {
 
   const fetchQuizData = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/quiz"); // Use the proxy URL here
+      const response = await axios.get("https://proxyserverquiz.onrender.com/api/quiz"); // Use the proxy URL here
       console.log(response.data.questions);
       console.log(response.data);
       setMetaData(response.data);
@@ -22,13 +22,6 @@ const AppState = (props) => {
   useEffect(() => {
     fetchQuizData();
   }, []);
-  // axios.get('http://localhost:5000/api/quiz')  // Use the backend route
-  // .then(response => {
-  //   console.log(response.data);
-  // })
-  // .catch(error => {
-  //   console.error('Error fetching quiz data', error);
-  // });
 
 
   return (
