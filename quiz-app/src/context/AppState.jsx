@@ -8,7 +8,7 @@ const AppState = (props) => {
 
     const fetchQuizData = async () => {
       try {
-        const response = await axios.get("/api/Uw5CrX");
+        const response = await axios.get("https://api.jsonserve.com/api/Uw5CrX");
         console.log(response.data.questions);
         console.log(response.data);
         setMetaData(response.data);
